@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=IWxwWFTlTUQ
+
+for setting smtp email
+
+Step 1: Setup Queue Configuration
+php artisan queue:table
+php artisan migrate
+
+Step 2: Creating Jobs
+php artisan make: mail TestHelloEmail
+$php artisan make:job NewUserWelcomeMail
+Step 3: Dispatch Queue Jobs
+ dispatch(new NewUserWelcomeMail($user));
+
+Step 4: Running Queue Jobs
+php artisan queue:work
+
+
+Feaker
+-------------
+
+php artisan make:factory BlogFactory --model=Blog
+
+You can simply create Modal with migration & Factory in single command.
+php artisan make:model modelName -mf
+
+we need to register factory path on 
+app/database/seeders/DatabaseSeeder.php
+-------------------
+
+\App\Models\User::factory(10)->create();
+        \App\Models\Blog::factory(10)->create();
+		
+		php artisan migrate:fresh --seed
