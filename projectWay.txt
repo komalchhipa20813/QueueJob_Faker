@@ -1,3 +1,6 @@
+add on .env file
+QUEUE_CONNECTION=database
+
 https://www.youtube.com/watch?v=IWxwWFTlTUQ
 
 for setting smtp email
